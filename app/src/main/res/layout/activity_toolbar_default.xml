@@ -25,6 +25,17 @@
 
     <include layout="@layout/includes_toolbar_default" />
 
-    <include layout="@layout/includes_scrollable_content" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/includes_content" />
+
+        <!-- Save toolbar shadow compatibility -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_shadow_height"
+            android:background="@drawable/toolbar_shadow" />
+    </FrameLayout>
 
 </LinearLayout>

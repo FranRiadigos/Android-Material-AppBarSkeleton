@@ -15,17 +15,10 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<resources>
-
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="toolbar_shadow_height">4dp</dimen>
-
-    <dimen name="spacing_xsmall">2dp</dimen>
-    <dimen name="spacing_medium">8dp</dimen>
-    <dimen name="spacing_large">16dp</dimen>
-    <dimen name="spacing_xlarge">32dp</dimen>
-
-    <dimen name="elevation_low">9dp</dimen>
-    <dimen name="elevation_high">12dp</dimen>
-
-</resources>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:endColor="@android:color/transparent"
+        android:startColor="#888888" />
+</shape>
