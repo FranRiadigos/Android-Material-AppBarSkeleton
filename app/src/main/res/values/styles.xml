@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2015 Kiko Gonzalez
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~       http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Main theme colors -->
+        <!--    your app branding color for the app bar -->
+        <item name="colorPrimary">@color/material_blue_500</item>
+        <!--    darker variant for the status bar and contextual app bars -->
+        <item name="colorPrimaryDark">@color/material_blue_700</item>
+        <!--    theme UI controls like checkboxes and text fields -->
+        <!--    colorAccent is used as the default value for colorControlActivated,
+                which is used to tint widgets -->
+        <item name="colorAccent">@color/material_red_A200</item>
+
+        <!--    You can also set colorControlNormal, colorControlActivated
+                colorControlHighlight, and colorSwitchThumbNormal. -->
+    </style>
+
+    <color name="material_blue_500">#2196F3</color>
+    <!-- Primary -->
+    <color name="material_blue_700">#1976D2</color>
+    <!-- PrimaryDark -->
+    <color name="material_red_A200">#FF5252</color>
+    <!-- Accent -->
+
+</resources>
