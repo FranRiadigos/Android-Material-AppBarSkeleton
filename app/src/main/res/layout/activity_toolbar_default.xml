@@ -23,7 +23,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <include layout="@layout/includes_toolbar" />
+    <include layout="@layout/includes_toolbar_default" />
 
     <include layout="@layout/includes_scrollable_content" />
 

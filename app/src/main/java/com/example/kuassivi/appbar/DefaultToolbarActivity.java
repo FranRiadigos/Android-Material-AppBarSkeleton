@@ -38,7 +38,7 @@ public class DefaultToolbarActivity extends AppCompatActivity {
         // Installed apps use the label of the main activity as the name of the app.
         // So we are ensuring that this activity has its proper Toolbar title.
         setTitle(R.string.activity_app_bar_default);
-        setContentView(R.layout.activity_default);
+        setContentView(R.layout.activity_toolbar_default);
         initToolbar();
         setupViews();
     }
