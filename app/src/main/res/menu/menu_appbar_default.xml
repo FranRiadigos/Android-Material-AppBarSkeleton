@@ -25,16 +25,16 @@
     <item
         android:id="@+id/action_toolbar_none"
         android:orderInCategory="200"
-        android:title="@string/action_toolbar_none"
+        android:title="@string/appbar_default_action_toolbar_none"
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_toolbar_scroll"
         android:orderInCategory="300"
-        android:title="@string/action_toolbar_scroll"
+        android:title="@string/appbar_default_action_toolbar_scroll"
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_toolbar_scroll_enter_always"
         android:orderInCategory="400"
-        android:title="@string/action_toolbar_scroll_enter_always"
+        android:title="@string/appbar_default_action_toolbar_scroll_enter_always"
         app:showAsAction="never"/>
 </menu>

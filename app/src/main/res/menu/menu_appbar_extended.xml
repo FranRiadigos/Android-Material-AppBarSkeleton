@@ -18,8 +18,44 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_toggle_icon_menu"
+        android:id="@+id/action_pin_toolbar"
         android:orderInCategory="100"
+        android:title="@string/action_pin_toolbar"
+        android:icon="@mipmap/ic_pin_drop_white_24dp"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_toggle_icon_menu"
+        android:orderInCategory="200"
         android:title="@string/action_toggle_icon_menu"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_toolbar_none"
+        android:orderInCategory="300"
+        android:title="@string/appbar_extended_action_toolbar_none"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_toolbar_scroll"
+        android:orderInCategory="400"
+        android:title="@string/appbar_extended_action_toolbar_scroll"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_toolbar_scroll_enter_always"
+        android:orderInCategory="500"
+        android:title="@string/appbar_extended_action_toolbar_scroll_enter_always"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_toolbar_scroll_enter_always_collapsed"
+        android:orderInCategory="600"
+        android:title="@string/appbar_extended_action_toolbar_scroll_enter_always_collapsed"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_toolbar_scroll_enter_always_enter_always_collapsed"
+        android:orderInCategory="700"
+        android:title="@string/appbar_extended_action_toolbar_scroll_enter_always_enter_always_collapsed"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_toolbar_scroll_exit_until_collapsed"
+        android:orderInCategory="800"
+        android:title="@string/appbar_extended_action_toolbar_scroll_exit_until_collapsed"
         app:showAsAction="never"/>
 </menu>

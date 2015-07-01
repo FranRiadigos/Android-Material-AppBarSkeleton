@@ -96,6 +96,15 @@ public class AppBarDefaultActivity extends BaseActivity {
         return true;
     }
 
+    /**
+     * You must set scrollFlags params directly in layouts using the "layout_scrollFlags" attribute.
+     *
+     * @param item MenuItem
+     * @return boolean
+     */
+    /*
+     *  TODO: requestLayout() does not work!
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
