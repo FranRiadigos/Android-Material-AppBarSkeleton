@@ -12,7 +12,7 @@
 bin/
 gen/
 captures/
-.navigation
+.navigation/
 
 # Gradle files
 .gradle/
