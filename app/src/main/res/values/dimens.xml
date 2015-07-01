@@ -19,7 +19,8 @@
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="appbar_shadow_height">4dp</dimen>
-    <dimen name="appbar_extended_content_size">144dp</dimen>
+    <dimen name="appbar_extended_size">200dp</dimen> <!-- 56dp + 72dp + 72dp -->
+    <dimen name="appbar_extended_content_size">144dp</dimen> <!-- 72dp + 72dp -->
 
     <dimen name="spacing_xsmall">2dp</dimen>
     <dimen name="spacing_medium">8dp</dimen>

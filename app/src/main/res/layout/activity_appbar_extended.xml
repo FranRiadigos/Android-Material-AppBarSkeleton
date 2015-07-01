@@ -47,40 +47,48 @@
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbarLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:elevation="4dp"
-            android:fitsSystemWindows="true"
-            android:minHeight="?attr/actionBarSize"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            android:layout_height="wrap_content">
 
-            <!-- app:theme --><!-- Apply a style on Toolbar (this case use Dark ActionBar with Light Titles, Theme, and so on) -->
-
-            <!-- app:popupTheme --><!-- Apply a style on Popups (this will show a popup menu with Light style) -->
-
-            <LinearLayout
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingTop="14dp"> <!-- TODO: Search for ActionBar attribute -->
+                android:layout_height="@dimen/appbar_extended_size"
+                android:background="?attr/colorPrimary"
+                android:elevation="@dimen/appbar_shadow_height"
+                android:fitsSystemWindows="true"
+                android:minHeight="?attr/actionBarSize"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin">
 
-                <Spinner android:id="@+id/appbar_filter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:dropDownWidth="fill_parent" />
+                <!-- android:layout_height --><!-- We must set here the final height, it's not valid to use wrap_content -->
+                <!-- app:theme --><!-- Apply a style on Toolbar (this case use Dark ActionBar with Light Titles, Theme, and so on) -->
+                <!-- app:popupTheme --><!-- Apply a style on Popups (this will show a popup menu with Light style) -->
+                <!-- app:layout_collapseMode="pin" --><!-- Pins actions and menus on AppBar -->
 
-                <FrameLayout
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/appbar_extended_content_size"
-                    tools:background="#a3e"/>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <Spinner android:id="@+id/appbar_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:dropDownWidth="fill_parent" />
 
-        </android.support.v7.widget.Toolbar>
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/appbar_extended_content_size"
+                        tools:background="#a3e"/> <!-- Change tools to android ns to show what is happening -->
+
+                </LinearLayout>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
 

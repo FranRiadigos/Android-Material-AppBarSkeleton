@@ -52,15 +52,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            android:elevation="4dp"
+            android:elevation="@dimen/appbar_shadow_height"
             android:fitsSystemWindows="true"
             android:minHeight="?attr/actionBarSize"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:layout_scrollFlags="scroll|enterAlways">
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
             <!-- app:theme --><!-- Apply a style on Toolbar (this case use Dark ActionBar with Light Titles, Theme, and so on) -->
-
             <!-- app:popupTheme --><!-- Apply a style on Popups (this will show a popup menu with Light style) -->
 
             <Spinner
