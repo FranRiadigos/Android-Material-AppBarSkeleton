@@ -63,7 +63,7 @@ public class AppBarDefaultActivity extends BaseActivity {
     /**
      * Now we can select different AppBar Styles to show
      */
-    private void initDropDownAdapter(){
+    private void initDropDownAdapter() {
         //Appbar page filter
         Spinner appbarFilter = (Spinner) findViewById(R.id.appbar_filter);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -121,7 +121,7 @@ public class AppBarDefaultActivity extends BaseActivity {
             case R.id.action_toolbar_scroll_enter_always:
                 params.setScrollFlags(
                     AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL
-                    |AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
+                        | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
                 mToolbar.setLayoutParams(params);
                 return true;
         }

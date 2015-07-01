@@ -17,9 +17,9 @@
   -->
 <resources>
 
-  <!-- Title -->
-  <string name="activity_appbar_extended_label">AppBar Extended</string>
+    <!-- Title -->
+    <string name="activity_appbar_extended_label">AppBar Extended</string>
 
-  <!-- Actions -->
+    <!-- Actions -->
 
 </resources>

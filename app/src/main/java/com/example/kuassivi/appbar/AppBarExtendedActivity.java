@@ -61,7 +61,7 @@ public class AppBarExtendedActivity extends BaseActivity {
     /**
      * Now we can select different AppBar Styles to show
      */
-    private void initDropDownAdapter(){
+    private void initDropDownAdapter() {
         //Appbar page filter
         Spinner appbarFilter = (Spinner) findViewById(R.id.appbar_filter);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(

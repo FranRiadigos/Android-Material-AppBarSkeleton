@@ -47,8 +47,8 @@
                         android:layout_marginLeft="@dimen/spacing_large"
                         android:layout_marginRight="@dimen/spacing_large"
                         android:layout_marginTop="@dimen/spacing_large"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                        android:text="@string/dummy_content_title"/>
+                        android:text="@string/dummy_content_title"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
                     <TextView
                         android:id="@+id/description"
@@ -56,7 +56,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/spacing_large"
                         android:text="@string/lorem_ipsum"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
                 </LinearLayout>
 
@@ -70,6 +70,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_shadow_height"
-        android:background="@drawable/toolbar_shadow" />
+        android:background="@drawable/toolbar_shadow"/>
 
 </FrameLayout>

@@ -16,10 +16,10 @@
   ~ limitations under the License.
   -->
 <android.support.design.widget.CoordinatorLayout
+    android:id="@+id/content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/appbar_extended_size"
         android:fitsSystemWindows="true"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" >
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <!-- android:layout_height --><!-- We must set here the total height of the extended AppBar -->
         <!-- android:theme --><!-- Apply a style on AppBarLayout -->
@@ -46,8 +46,8 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
-                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
                 <!-- android:layout_height --><!-- We must set the height of the Toolbar -->
                 <!-- app:theme --><!-- Apply a style on Toolbar (this case use Dark ActionBar with Light Titles, Theme, and so on) -->
@@ -55,10 +55,11 @@
                 <!-- app:layout_collapseMode="pin" --><!-- Pins actions and menus on AppBar -->
                 <!-- android:elevation  --><!-- Remove elevation attribute on Toolbar, AppBarLayout will handle itself -->
 
-                <Spinner android:id="@+id/appbar_filter"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:dropDownWidth="fill_parent" />
+                <Spinner
+                    android:id="@+id/appbar_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:dropDownWidth="fill_parent"/>
 
             </android.support.v7.widget.Toolbar>
 
@@ -70,7 +71,8 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/appbar_extended_dummy_content_size"
-                    tools:background="#a3e"/> <!-- Change "tools" to "android" namespace to show what is happening -->
+                    tools:background="#a3e"/>
+                <!-- Change "tools" to "android" namespace to show what is happening -->
 
             </LinearLayout>
 
@@ -84,6 +86,6 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-        <!-- app:layout_behavior --><!-- This will apply the animations when scrolling, you can develop your own behavior -->
+    <!-- app:layout_behavior --><!-- This will apply the animations when scrolling, you can develop your own behavior -->
 
 </android.support.design.widget.CoordinatorLayout>
