@@ -15,27 +15,8 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <include layout="@layout/includes_toolbar_default" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <include layout="@layout/includes_content" />
-
-        <!-- Save toolbar shadow compatibility -->
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/toolbar_shadow_height"
-            android:background="@drawable/toolbar_shadow" />
-    </FrameLayout>
-
-</LinearLayout>
+    android:paddingRight="10dp"/> <!-- TODO: Search for Spinner attribute -->

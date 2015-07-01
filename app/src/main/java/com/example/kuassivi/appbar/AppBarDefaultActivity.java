@@ -18,35 +18,61 @@ package com.example.kuassivi.appbar;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 /**
- * The purpose of this Demo App is to have different skeletons for different toolbar styles.
- * So each toolbar style will have its own Activity Class to separate features.
+ * The purpose of this Demo App is to have different skeletons reusable of AppBar styles.
+ * So you can access to many features of an AppBar style on each Activity class.
  */
-public class DefaultToolbarActivity extends AppCompatActivity {
-
+public class AppBarDefaultActivity extends BaseActivity {
     private View mContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Installed apps use the label of the main activity as the name of the app.
-        // So we are ensuring that this activity has its proper Toolbar title.
-        setTitle(R.string.activity_app_bar_default);
-        setContentView(R.layout.activity_toolbar_default);
+        setContentView(R.layout.activity_appbar_default);
         initToolbar();
-        setupViews();
+        setupMainContent();
+        initDropDownAdapter();
     }
 
+    /**
+     * We don't want to refactor this method because of general purpose
+     */
     private void initToolbar() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         setDisplayHomeAsUpEnabled();
+    }
+
+    /**
+     * We need the R.id.content View to apply Snackbar on it
+     */
+    private void setupMainContent() {
+        mContent = findViewById(R.id.content);
+    }
+
+    /**
+     * Now we can select different AppBar Styles to show
+     */
+    private void initDropDownAdapter(){
+        //Appbar page filter
+        Spinner appbarFilter = (Spinner) findViewById(R.id.appbar_filter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+            getSupportActionBar().getThemedContext(),
+            R.layout.appbar_filter_title,
+            getResources().getStringArray(R.array.filter_appbar_styles));
+        adapter.setDropDownViewResource(R.layout.appbar_filter_list);
+        appbarFilter.setAdapter(adapter);
+        appbarFilter.setSelection(Constants.AppBarStyles.DEFAULT);
+        appbarFilter.setTag(appbarFilter.getSelectedItemPosition());
+        appbarFilter.setOnItemSelectedListener((BaseActivity) this);
     }
 
     /**
@@ -61,17 +87,10 @@ public class DefaultToolbarActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * We need the R.id.content View to apply Snackbar on it
-     */
-    private void setupViews() {
-        mContent = findViewById(R.id.content);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_toolbar_default, menu);
+        getMenuInflater().inflate(R.menu.menu_appbar_default, menu);
         return true;
     }
 
@@ -82,8 +101,10 @@ public class DefaultToolbarActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case android.R.id.home:
-            case R.id.action_show_others:
-                Snackbar.make(mContent, R.string.coming_soon, Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(mContent, R.string.snackbar_sample, Snackbar.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_toggle_icon_menu:
+                toggleMenu();
                 return true;
         }
         return super.onOptionsItemSelected(item);
