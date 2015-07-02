@@ -36,7 +36,7 @@ public class BaseActivity extends AppCompatActivity
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        if((int)parent.getTag() != position)
+        if ((int) parent.getTag() != position)
             switch (position) {
                 case Constants.AppBarStyles.DEFAULT:
                     navigateTo(AppBarDefaultActivity.class);
@@ -48,5 +48,6 @@ public class BaseActivity extends AppCompatActivity
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {}
+    public void onNothingSelected(AdapterView<?> parent) {
+    }
 }

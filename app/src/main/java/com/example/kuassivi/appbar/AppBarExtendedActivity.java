@@ -16,6 +16,8 @@
 package com.example.kuassivi.appbar;
 
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
@@ -31,6 +33,7 @@ import android.widget.Spinner;
  */
 public class AppBarExtendedActivity extends BaseActivity {
     private View mContent;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +48,8 @@ public class AppBarExtendedActivity extends BaseActivity {
      * We don't want to refactor this method because of general purpose
      */
     private void initToolbar() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         setDisplayHomeAsUpEnabled();
     }
@@ -61,7 +64,7 @@ public class AppBarExtendedActivity extends BaseActivity {
     /**
      * Now we can select different AppBar Styles to show
      */
-    private void initDropDownAdapter(){
+    private void initDropDownAdapter() {
         //Appbar page filter
         Spinner appbarFilter = (Spinner) findViewById(R.id.appbar_filter);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
@@ -94,17 +97,68 @@ public class AppBarExtendedActivity extends BaseActivity {
         return true;
     }
 
+    /**
+     * You must set scrollFlags params directly in layouts using the "layout_scrollFlags" attribute.
+     *
+     * @param item MenuItem
+     * @return boolean
+     */
+    /*
+     *  TODO: requestLayout() does not work!
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+        CollapsingToolbarLayout layout = (CollapsingToolbarLayout) mToolbar.getParent();
+        AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) layout.getLayoutParams();
         switch (item.getItemId()) {
             case android.R.id.home:
                 Snackbar.make(mContent, R.string.snackbar_sample, Snackbar.LENGTH_SHORT).show();
                 return true;
+            case R.id.action_pin_toolbar:
+                CollapsingToolbarLayout.LayoutParams paramsToolbar =
+                    (CollapsingToolbarLayout.LayoutParams) mToolbar.getLayoutParams();
+                paramsToolbar.setCollapseMode(CollapsingToolbarLayout.LayoutParams.COLLAPSE_MODE_PIN);
+                mToolbar.setLayoutParams(paramsToolbar);
+                return true;
             case R.id.action_toggle_icon_menu:
                 toggleMenu();
+                return true;
+            case R.id.action_toolbar_none:
+                params.setScrollFlags(0);
+                layout.setLayoutParams(params);
+                return true;
+            case R.id.action_toolbar_scroll:
+                params.setScrollFlags(
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL);
+                layout.setLayoutParams(params);
+                return true;
+            case R.id.action_toolbar_scroll_enter_always:
+                params.setScrollFlags(
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL
+                        | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
+                layout.setLayoutParams(params);
+                return true;
+            case R.id.action_toolbar_scroll_enter_always_collapsed:
+                params.setScrollFlags(
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL
+                        | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS_COLLAPSED);
+                layout.setLayoutParams(params);
+                return true;
+            case R.id.action_toolbar_scroll_enter_always_enter_always_collapsed:
+                params.setScrollFlags(
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL
+                        | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS
+                        | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS_COLLAPSED);
+                layout.setLayoutParams(params);
+                return true;
+            case R.id.action_toolbar_scroll_exit_until_collapsed:
+                params.setScrollFlags(
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL
+                        | AppBarLayout.LayoutParams.SCROLL_FLAG_EXIT_UNTIL_COLLAPSED);
+                layout.setLayoutParams(params);
                 return true;
         }
         return super.onOptionsItemSelected(item);

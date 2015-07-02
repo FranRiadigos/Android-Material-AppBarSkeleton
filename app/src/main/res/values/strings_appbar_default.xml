@@ -17,9 +17,12 @@
   -->
 <resources>
 
-  <!-- Title -->
-  <string name="activity_appbar_default_label">AppBar Default</string>
+    <!-- Title -->
+    <string name="activity_appbar_default_label">AppBar Default</string>
 
-  <!-- Actions -->
+    <!-- Actions -->
+    <string name="appbar_default_action_toolbar_none">Toolbar: none</string>
+    <string name="appbar_default_action_toolbar_scroll">Toolbar: scroll</string>
+    <string name="appbar_default_action_toolbar_scroll_enter_always">Toolbar: scroll | enterAlways</string>
 
 </resources>

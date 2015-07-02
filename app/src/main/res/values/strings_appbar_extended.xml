@@ -17,9 +17,16 @@
   -->
 <resources>
 
-  <!-- Title -->
-  <string name="activity_appbar_extended_label">AppBar Extended</string>
+    <!-- Title -->
+    <string name="activity_appbar_extended_label">AppBar Extended</string>
 
-  <!-- Actions -->
+    <!-- Actions -->
+    <string name="action_pin_toolbar">Pin Toolbar</string>
+    <string name="appbar_extended_action_toolbar_none">Toolbar: none</string>
+    <string name="appbar_extended_action_toolbar_scroll">Toolbar: scroll</string>
+    <string name="appbar_extended_action_toolbar_scroll_enter_always">Toolbar: scroll | enterAlways</string>
+    <string name="appbar_extended_action_toolbar_scroll_enter_always_collapsed">Toolbar: scroll | enterAlwaysCollapsed</string>
+    <string name="appbar_extended_action_toolbar_scroll_enter_always_enter_always_collapsed">Toolbar: scroll | enterAlways | enterAlwaysCollapsed</string>
+    <string name="appbar_extended_action_toolbar_scroll_exit_until_collapsed">Toolbar: scroll | exitUntilCollapsed</string>
 
 </resources>

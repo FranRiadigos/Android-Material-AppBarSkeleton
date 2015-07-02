@@ -17,6 +17,7 @@
   -->
 <resources>
 
-  <dimen name="appbar_extended_size">192dp</dimen> <!-- 48dp + 72dp + 72dp -->
+    <dimen name="appbar_extended_size">192dp</dimen>
+    <!-- 48dp + 72dp + 72dp -->
 
 </resources>

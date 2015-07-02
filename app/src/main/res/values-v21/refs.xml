@@ -16,5 +16,5 @@
   ~ limitations under the License.
   -->
 <resources>
-  <item name="toolbar_shadow" type="drawable">@null</item>
+    <item name="toolbar_shadow" type="drawable">@null</item>
 </resources>
