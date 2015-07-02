@@ -49,7 +49,7 @@ XML
 ```
 
 
-CoordinatorLayout Properties
+AppBarLayout Properties
 ----------------------------
 
 >For Default AppBar interactions:
