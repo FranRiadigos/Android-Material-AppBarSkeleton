@@ -25,6 +25,15 @@
     android:orientation="vertical"
     tools:context=".AppBarDefaultActivity">
 
+    <!-- Your content should go here -->
+    <include
+        layout="@layout/includes_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    <!-- app:layout_behavior --><!-- This will apply the animations when scrolling, you can develop your own behavior -->
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbarLayout"
         android:layout_width="match_parent"
@@ -37,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            android:elevation="@dimen/appbar_shadow_height"
+            android:elevation="@dimen/appbar_elevation_size"
             android:minHeight="?attr/actionBarSize"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -54,13 +63,5 @@
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
-
-    <include
-        layout="@layout/includes_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
-    <!-- app:layout_behavior --><!-- This will apply the animations when scrolling, you can develop your own behavior -->
 
 </android.support.design.widget.CoordinatorLayout>

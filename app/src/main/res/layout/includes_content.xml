@@ -69,7 +69,7 @@
     <!-- Save toolbar shadow compatibility -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/appbar_shadow_height"
+        android:layout_height="@dimen/appbar_elevation_size"
         android:background="@drawable/toolbar_shadow"/>
 
 </FrameLayout>
